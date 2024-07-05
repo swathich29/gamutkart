@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone-Repo') {
 	    	steps {
-	        	checkout scm
+	        	git 'https://github.com/swathich29/gamutkart.war'
 	    	}
         }
 	stage('Build') {
@@ -32,7 +32,7 @@ pipeline {
         }
 	stage('Deployment') {
 	   steps {
-		sh 'scp target/gamutkart.war root@172.31.37.107:/root/apache-tomcat-9.0.90/webapps'
+		sh 'scp target/gamutkart.war root@:172.31.44.144:/root/source/apache-tomcat-9.0.90/webapps'
 	}
     }
 }
