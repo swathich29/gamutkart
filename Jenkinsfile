@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone-Repo') {
 	    	steps {
-	        	'checkout scm'
+	        	checkout scm
 	    	}
         }
 	stage('Build') {
